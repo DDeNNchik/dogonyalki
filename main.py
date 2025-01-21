@@ -42,6 +42,16 @@ class Player(Sprite):
         if keys[s]: 
             self.rect.y += self.speed
 
+class Enemy(Sprite):
+    def __init__(self, x, y, w, h, image, speed, x2):
+        super().__init__(x, y, w, h, image)
+        self.speed = speed
+        self.x1 = x
+        self.x2 = x2
+
+    def move(self):
+        self.rect.x += self.speed
+
 blocks = []
 block_size = 25
 
@@ -65,6 +75,8 @@ img_gold = pygame.image.load("treasure.png")
 treasure = Sprite(100, 50, 50, 50, img_gold)
 
 player = Player(0, 400, 50, 50, pygame.image.load("sprite1.png"), 2)
+
+enemy1 = Enemy(200, 300, 50, 50, pygame.load.image("cyborg.png"), 2, 400)
 
 game = True
 finish = False
