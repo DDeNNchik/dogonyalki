@@ -94,6 +94,8 @@ while game:
         player.draw()
         player.move(pygame.K_a, pygame.K_d, pygame.K_s, pygame.K_w)
         treasure.draw()
+        enemy1.draw()
+        enemy1.move()
 
         for b in blocks:
             if player.rect.colliderect(b.rect):
