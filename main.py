@@ -50,7 +50,11 @@ class Enemy(Sprite):
         self.x2 = x2
 
     def move(self):
-        self.rect.x += self.speed
+        if self.rect.x >= self.x2:
+            self.rect.x = self.x2
+            self.rect.x -= self.speed  
+        else:
+            self.rect.x += self.speed
 
 blocks = []
 block_size = 25
